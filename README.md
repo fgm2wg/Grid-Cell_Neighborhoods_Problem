@@ -25,6 +25,7 @@
 - Then either manually run the Main.java class directly or `.\gradlew run`
 
 ## Other Notes
+- This project uses Java JDK 21 which is necessary for certain functions used such as `getFirst()`
 - As mentioned in the GridCellNeighborhoods.java file, I did use online resources to help me complete this problem which are listed below:
 - https://www.geeksforgeeks.org/dsa/breadth-first-traversal-bfs-on-a-2d-array/
   - Found how to best implement the BFS algorithm in Java.
