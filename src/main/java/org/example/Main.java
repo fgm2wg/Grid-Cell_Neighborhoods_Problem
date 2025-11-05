@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Main {
     /**
-     * Main function to run the example scenario.
+     * Main function to run the example scenarios and visualize the results.
      *
      * @param args Command-line arguments.
      */
@@ -17,7 +17,7 @@ public class Main {
         ArrayList<ArrayList<Integer>> grid = generateGrid(11, 11, pos_val_coords);
         int n = 3;
 
-        GridCell_Neighborhoods solver = new GridCell_Neighborhoods(grid, n);
+        GridCellNeighborhoods solver = new GridCellNeighborhoods(grid, n);
         int result = solver.numCellsWithinNSteps();
         System.out.println("Result: " + result);
         ArrayList<ArrayList<Boolean>> visited_grid = solver.getVisitedGrid();
@@ -28,7 +28,7 @@ public class Main {
         pos_val_coords = List.of(Arrays.asList(5, 1)); // (row, col), 1-indexed
         grid = generateGrid(11, 11, pos_val_coords);
 
-        solver = new GridCell_Neighborhoods(grid, n);
+        solver = new GridCellNeighborhoods(grid, n);
         result = solver.numCellsWithinNSteps();
         System.out.println("Result: " + result);
         visited_grid = solver.getVisitedGrid();
@@ -40,7 +40,7 @@ public class Main {
         grid = generateGrid(11, 11, pos_val_coords);
         n = 2;
 
-        solver = new GridCell_Neighborhoods(grid, n);
+        solver = new GridCellNeighborhoods(grid, n);
         result = solver.numCellsWithinNSteps();
         System.out.println("Result: " + result);
         visited_grid = solver.getVisitedGrid();
@@ -51,7 +51,7 @@ public class Main {
         pos_val_coords = List.of(Arrays.asList(7, 3), Arrays.asList(6, 5)); // (row, col), 1-indexed
         grid = generateGrid(11, 11, pos_val_coords);
 
-        solver = new GridCell_Neighborhoods(grid, n);
+        solver = new GridCellNeighborhoods(grid, n);
         result = solver.numCellsWithinNSteps();
         System.out.println("Result: " + result);
         visited_grid = solver.getVisitedGrid();

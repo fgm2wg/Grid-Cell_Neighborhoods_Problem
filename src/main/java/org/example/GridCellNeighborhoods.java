@@ -12,21 +12,20 @@ package org.example;
 
 import java.util.*;
 
-public class GridCell_Neighborhoods {
+public class GridCellNeighborhoods {
     // --- Private class fields ---
     private final ArrayList<ArrayList<Integer>> grid;
     private ArrayList<ArrayList<Boolean>> visited_grid;
     private final int n, numRows, numCols;
 
     // --- Public class methods ---
-
     /**
      * Constructor for the class to setup the grid, N, and grid dimensions.
      *
      * @param grid The n x m grid of integers.
      * @param n    The number of steps to count from each positive number in the grid.
      */
-    public GridCell_Neighborhoods(ArrayList<ArrayList<Integer>> grid, int n) {
+    public GridCellNeighborhoods(ArrayList<ArrayList<Integer>> grid, int n) {
         this.grid = grid;
         this.n = n;
 
@@ -69,8 +68,7 @@ public class GridCell_Neighborhoods {
             int i = values.get(0), j = values.get(1), dist = values.get(2);
 
             // If the distance is equal to number of steps we can take, then skip it
-            if (dist == n)
-                continue;
+            if (dist == n) continue;
 
             // Iterate over the four directions to find adjacent cells
             for (List<Integer> direction : directions) {
@@ -92,8 +90,7 @@ public class GridCell_Neighborhoods {
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
                 // If cell is marked as visited, then increment the count
-                if (visited_grid.get(i).get(j))
-                    count++;
+                if (visited_grid.get(i).get(j)) count++;
             }
         }
 
@@ -103,10 +100,8 @@ public class GridCell_Neighborhoods {
 
     /**
      * Function to generate the grid to store whether cells were visited or not in BFS.
-     *
-     * @return ArrayList<ArrayList < Boolean>>, a grid of equal dimensions to input grid with boolean values all initialized to false.
      */
-    public ArrayList<ArrayList<Boolean>> generateVisitedGrid() {
+    public void generateVisitedGrid() {
         // Initialize the visited grid
         visited_grid = new ArrayList<>();
 
@@ -118,11 +113,9 @@ public class GridCell_Neighborhoods {
             for (int j = 0; j < numCols; j++)
                 row.add(false);
 
+            // Add row to grid
             visited_grid.add(row);
         }
-
-        // Return the final constructed visited grid
-        return visited_grid;
     }
 
     /**
@@ -139,7 +132,8 @@ public class GridCell_Neighborhoods {
 
     /**
      * Returns the visited_grid.
-     * @return ArrayList<ArrayList<Boolean>>, the visited_grid.
+     *
+     * @return ArrayList<ArrayList < Boolean>>, the visited_grid.
      */
     public ArrayList<ArrayList<Boolean>> getVisitedGrid() {
         return visited_grid;
